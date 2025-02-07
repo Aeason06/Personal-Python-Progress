@@ -5,7 +5,7 @@ CODING WITH CSV AND EXCEL
 import pandas as pd
 import matplotlib.pyplot as plt
 # Get path from file explorer and paste it here. place "r" in front of path to prevent errors later.
-rec_path = r"C:\Users\austi\OneDrive\Desktop\receiving_summary_2024_WR_priority.csv"
+rec_path = #put file path here
 
 # This reads whole file. All rows and columns. Use "read_excel" if using a xlsx file.
 rec_data = pd.read_csv(rec_path)

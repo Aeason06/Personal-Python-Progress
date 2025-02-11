@@ -1,26 +1,23 @@
-"""
-CODING WITH CSV AND EXCEL
-"""
-# Always use pandas when doing someithng with csv of xlsx
 import pandas as pd
 import matplotlib.pyplot as plt
-# Get path from file explorer and paste it here. place "r" in front of path to prevent errors later.
-rec_path = #put file path here
 
-# This reads whole file. All rows and columns. Use "read_excel" if using a xlsx file.
+rec_path = r"C:\Users\austi\Downloads\receiving_summary_complete.csv"
+
 rec_data = pd.read_csv(rec_path)
 
-# "usecols" allows you to choose which column to use and ".head" allows you to decide how many rows from the top you want to use ".tail" would do the opposite.
-# rec_data = pd.read_csv(path, usecols = ['player'])
+min_targets = 80
 
-# Try to find a way to only use players with min 35 targets
+filtered_rec_data = rec_data[rec_data['targets'] >= min_targets]
 
-names = list(rec_data['player'].head(30))
-o_grade = list(rec_data['grades_offense'].head(30))
-teams = list(rec_data['team_name'].head(30))
+rec_data_sorted = filtered_rec_data.sort_values(by = 'grades_offense', ascending = False)
+
+names = list(rec_data_sorted['player'].head(30))
+o_grade = list(rec_data_sorted['grades_offense'].head(30))
+teams = list(rec_data_sorted['team_name'].head(30))
+targets = list(rec_data_sorted['targets'].head(30))
 
 team_colors = {
-    'ARZ' : '#97233F',
+    'ARZ' : '#97233F', 
     'ATL' : 'black',
     'BLT' : '#241773',
     'BUF' : '#00338D',
@@ -56,12 +53,13 @@ team_colors = {
 
 colors = [team_colors.get(team, 'grey')for team in teams]
 plt.bar(names, o_grade, color = colors)
-plt.title('Top 30 Receivers by PFF Offensive Grade (2024 min. 25 TGT)')
-plt.xlabel("""WR's""")
+plt.title('Top 30 Receivers by PFF Offensive Grade (2024 min. 80 TGT)')
+plt.xlabel("""Receivers""")
 plt.ylabel('Offensive Grades')
 
 plt.ylim(bottom = 75)
 plt.xticks(rotation = 315, ha = 'left', fontsize = 7)
 
 plt.show()
+
 

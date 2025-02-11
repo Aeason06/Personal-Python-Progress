@@ -7,7 +7,7 @@ Created on Fri Feb  7 21:07:19 2025
 
 import pandas as pd
 import matplotlib.pyplot as plt
-rush_path = r"C:\Users\austi\Downloads\rushing_summary.csv"
+rush_path = #file path
 
 rush_data = pd.read_csv(rush_path)
 

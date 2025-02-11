@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-rec_path = r"C:\Users\austi\Downloads\receiving_summary_complete.csv"
+rec_path = #file path
 
 rec_data = pd.read_csv(rec_path)
 

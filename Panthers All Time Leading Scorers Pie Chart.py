@@ -11,8 +11,8 @@ import pandas as pd
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 from PIL import Image
 
-data_path = r"C:\Users\austi\Downloads\panthers scoring sheet un-edited.xls.xlsx"
-image_path = r"C:\Users\austi\OneDrive\Desktop\nfl team logos\CAR.png"
+data_path = #FILE PATH
+image_path = #FILE PATH
 scoring_data = pd.read_excel(data_path)
 
 min_points = 80

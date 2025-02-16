@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd 
 
-data_path = r"C:\Users\austi\Downloads\2024 nfl drive data.xls.xlsx"
+data_path = #FILE PATH
 
 team_data = pd.read_excel(data_path)
 
